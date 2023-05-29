@@ -13,19 +13,12 @@ class Road {
     }
 
     draw(ctx){
-
-        
-
-       
         ctx.lineWidth = 5
         ctx.strokeStyle = "white"
         ctx.beginPath()
         ctx.moveTo(this.left, this.top)
         ctx.lineTo(this.right, this.bottom )
         ctx.stroke()
-
-
-        
 
     }
 }

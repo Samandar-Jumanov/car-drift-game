@@ -13,6 +13,22 @@ class Car {
         this.angle = 0
     }
 
+
+    isInsideCanvas() {
+        const canvas = document.getElementById('myCanvas');
+        const canvasRect = canvas.getBoundingClientRect();
+        const car = {
+          left: this.x,
+          forward: this.y,
+          right: this.x + this.width,
+          reverse: this.y + this.height
+        };
+      
+        return car.left >= canvasRect.left && car.right <= canvasRect.right &&
+               car.top >= canvasRect.top && car.bottom <= canvasRect.bottom;
+      }
+      
+
     draw(ctx){
         ctx.save()
         ctx.translate(this.x , this.y)
